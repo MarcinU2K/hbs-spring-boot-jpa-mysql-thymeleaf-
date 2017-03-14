@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Hotel Booking System</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h2>HBS - Hotel Booking System</h2>
+		</div>
+	</div>
+
+	<div id="container">
+		<div id="content">
+			<th><input type="button" value="Back"
+				onclick="window.location.href='/hbs/'; return false" class="button" /></th>
+			<table>
+				<tr>
+					<th>Room</th>
+					<th>Floor</th>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>Action</th>
+				</tr>
+				<tr th:each="bookings: ${bookings}">		
+					<td th:text="${bookings.id}"></td>
+					<td th:text="${bookings.floor}"></td>
+					<td th:text="${bookings.guestName}"></td>
+					<td th:text="${bookings.guestSurname}"></td>
+					<td> <a th:href="@{showUpdateForm/{id}(id=${bookings.id})}"><span>Update</span></a> | <a th:href="@{deleteBooking/{id}(id=${bookings.id})}"><span>Delete</span></a></td>
+
+				</tr>
+
+			</table>
+			<p></p>
+			<th><input type="button" value="Back"
+		onclick="window.location.href='/hbs/'; return false" class="button" /></th>
+		</div>
+	</div>
+</body>
+</html>

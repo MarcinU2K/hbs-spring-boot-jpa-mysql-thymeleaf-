@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>New booking</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/booking-form.css}" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h2>HBS - Hotel Booking System</h2>
+		</div>
+	</div>
+
+	<div id="container">
+		<h3>Add booking</h3>
+		<form action="#" th:action="@{/hbs/addBooking}" th:object="${room}"
+			method="post">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Room number:</label></td>
+						<td><input type="text" th:value="*{id}" th:field="*{id}" /></td>
+					</tr>
+					<tr>
+						<td><label>First name:</label></td>
+						<td><input type="text" th:value="*{guestName}" th:field="*{guestName}" /></td>
+					</tr>
+					<tr>
+						<td><label>Second name:</label></td>
+						<td><input type="text" th:value="*{guestSurname}" th:field="*{guestSurname}" /></td>
+					</tr>
+					<tr>
+						<td><label></label></td>
+						<td><input type="submit" value="save" class="save" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	<td><input type="button" value="Back"
+		onclick="window.location.href='/hbs/'; return false" class="save" /></td>
+	</div>
+</body>
+</html>
