@@ -27,12 +27,14 @@ tr {
 tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
-#wrapper {width: 100%; margin-top: 0px; margin:auto; a:visited {color: #FFFFFF;}}
-#header {width: 70%; background: #4169e1; margin-top: 0px; padding:15px 0px 15px 15px;}
+#wrapper {width: 100%; margin-top: 0px; margin:auto; padding:0px 0px 0px 0px; a:visited {color: #FFFFFF;}}
+#header {width: 100%; background: #4169e1; margin-top: 0px; padding:15px 0px 15px 15px;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
 #container #content {margin-top: 20px;}
+#footer {width: 100%;  background: #4169e1; padding:15px 0px 15px 15px; margin-top: 0px;}
+#footer h2 {width: 100%; margin:auto; color: #FFFFFF; font-size: 12; text-align:center}
 
 .button {
 	border: 1px solid #666; 

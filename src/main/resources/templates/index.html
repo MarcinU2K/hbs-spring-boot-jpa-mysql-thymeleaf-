@@ -4,23 +4,38 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<h2>HBS - Hotel Booking System</h2>
-		</div>
+
+	<div id="header">
+		<h2>HBS - Hotel Booking System</h2>
 	</div>
+
 	<div>
+		<input type="button" value="HOTEL SETUP"
+				onclick="window.location.href='showHotelSetupForm'; return false"
+				class="button" />
 		<table>
 			<input type="button" value="Add booking"
 				onclick="window.location.href='showBookingForm'; return false"
 				class="button" />
-			<input type="button" value="Show current bookings"
-				onclick="window.location.href='showall'; return false"
+			<input type="button" value="Show occupied rooms"
+				onclick="window.location.href='showalloccupied'; return false"
 				class="button" />
 			<input type="button" value="Show available rooms"
 				onclick="window.location.href='showavailable'; return false"
 				class="button" />
+			<input type="button" value="Show all rooms"
+				onclick="window.location.href='showall'; return false"
+				class="button" />
 		</table>
 	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	Now is: <b th:text="${execInfo.now.time}"></b>
+		<div id="footer">
+			<h2>(c)Hotel Booking System by Marcin Pisera, 2017</h2>
+		</div>
 </body>
 </html>

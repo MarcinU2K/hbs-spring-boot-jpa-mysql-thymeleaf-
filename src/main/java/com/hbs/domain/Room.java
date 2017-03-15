@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "room")
@@ -14,30 +16,35 @@ public class Room {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@Valid
+    @NotNull
 	private int floor;
 	
 	private String guestName;
 	
 	private String guestSurname;
 	
-	private boolean available;
+	@Valid
+    @NotNull
+	private RoomState roomState;
 
 	public Room() {
 	}
-
-	public Room(Long id, String guestName, String guestSurname, boolean available) {
+	
+	public Room(Long id, String guestName, String guestSurname, RoomState roomState) {
+		super();
 		this.id = id;
 		this.guestName = guestName;
 		this.guestSurname = guestSurname;
-		this.available = available;
+		this.roomState = roomState;
 	}
-	
-	public Room(int floor, String guestName, String guestSurname, boolean available) {
+
+	public Room(int floor, String guestName, String guestSurname, RoomState roomState) {
 		super();
 		this.floor = floor;
 		this.guestName = guestName;
 		this.guestSurname = guestSurname;
-		this.available = available;
+		this.roomState = roomState;
 	}
 
 	public Long getId() {
@@ -72,11 +79,12 @@ public class Room {
 		this.guestSurname = guestSurname;
 	}
 
-	public boolean isAvailable() {
-		return available;
+	public RoomState getRoomState() {
+		return roomState;
 	}
 
-	public void setAvailable(boolean available) {
-		this.available = available;
+	public void setRoomState(RoomState roomState) {
+		this.roomState = roomState;
 	}
+
 }
